@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+.env
+.git/
+.github/
+.gitignore
+.difyignore
+tests/
+LICENSE
+*.difypkg

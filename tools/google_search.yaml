@@ -1,0 +1,22 @@
+identity:
+  author: reserp
+  name: google_search
+  label:
+    en_US: Google Search with Reserp
+description:
+  human:
+    en_US: Send a complete Google Search URL to Reserp and receive its public JSON response.
+  llm: Submit one complete https://www.google.com/search URL to Reserp. The tool returns the public API response without retries, result filtering, or automatic pagination.
+parameters:
+  - name: url
+    type: string
+    required: true
+    form: llm
+    label:
+      en_US: Google Search URL
+    human_description:
+      en_US: Complete https://www.google.com/search URL with a non-empty q parameter. Do not include num.
+    llm_description: A complete https://www.google.com/search URL containing a non-empty q parameter. Google URL parameters such as gl, hl, start, tbs, and tbm are allowed. Do not include num.
+extra:
+  python:
+    source: tools/google_search.py

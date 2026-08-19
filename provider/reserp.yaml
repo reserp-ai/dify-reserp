@@ -1,0 +1,26 @@
+identity:
+  author: reserp
+  name: reserp
+  label:
+    en_US: Reserp
+  description:
+    en_US: Submit a complete Google Search URL and receive visible result blocks as structured JSON.
+  icon: icon.png
+  tags:
+    - search
+credentials_for_provider:
+  reserp_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Reserp API key
+    placeholder:
+      en_US: Enter your Reserp API key
+    help:
+      en_US: Use an API key from your Reserp account.
+    url: https://reserp.ai/
+tools:
+  - tools/google_search.yaml
+extra:
+  python:
+    source: provider/reserp.py

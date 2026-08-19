@@ -26,6 +26,10 @@ The surrounding Dify application controls retries and all other operational poli
 - [OpenAPI definition](https://reserp.ai/openapi.json)
 - [Source code](https://github.com/reserp-ai/dify-reserp)
 
+## Connection requirements
+
+Each tool invocation makes one outbound HTTPS request to `https://api.reserp.ai/v1/serp`. The plugin does not contact Google directly.
+
 ## Support
 
 For API and plugin questions, contact [support@reserp.ai](mailto:support@reserp.ai).

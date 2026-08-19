@@ -9,6 +9,8 @@ description:
 icon: icon.png
 created_at: '2026-08-19T08:30:00Z'
 privacy: PRIVACY.md
+repo: https://github.com/reserp-ai/dify-reserp
+contact: support@reserp.ai
 resource:
   memory: 268435456
   permission: {}
@@ -24,5 +26,6 @@ meta:
     language: python
     version: '3.12'
     entrypoint: main
+  minimum_dify_version: '1.0.0'
 tags:
   - search

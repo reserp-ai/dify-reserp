@@ -21,15 +21,17 @@ class FakeResponse(io.BytesIO):
 def test_one_request_and_unchanged_payload() -> None:
     payload = {
         "ok": True,
-        "url": "https://www.google.com/search?q=test",
-        "finalUrl": "https://www.google.com/search?q=test",
-        "results": [{"url": "https://example.com"}],
-        "pagination": {
-            "start": 0,
-            "nextStart": 10,
-            "nextUrl": "https://www.google.com/search?q=test&start=10",
+        "request": {"url": "https://www.google.com/search?q=test"},
+        "page": {"url": "https://www.google.com/search?q=test"},
+        "urls": [{"url": "https://example.com", "text": "Example"}],
+        "pagination": {"next_url": "https://www.google.com/search?q=test&start=10"},
+        "metadata": {
+            "captured_at": "2026-09-07T00:00:00Z",
+            "parser_version": "2.0.0",
+            "warnings": [],
         },
         "billed": True,
+        "billing_source": "prepaid",
     }
     calls = []
 
@@ -45,7 +47,7 @@ def test_one_request_and_unchanged_payload() -> None:
 
     assert result == payload
     assert len(calls) == 1
-    assert calls[0].full_url == "https://api.reserp.ai/v1/serp"
+    assert calls[0].full_url == "https://api.reserp.ai/v2/serp/urls"
     assert calls[0].get_header("Authorization") == "Bearer test-key"
     assert json.loads(calls[0].data) == {
         "url": "https://www.google.com/search?q=test"

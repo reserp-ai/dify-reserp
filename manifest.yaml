@@ -1,11 +1,11 @@
-version: 0.1.0
+version: 0.2.0
 type: plugin
 author: reserp
 name: reserp
 label:
   en_US: Reserp
 description:
-  en_US: Submit a complete Google Search URL and receive visible result blocks as structured JSON.
+  en_US: Submit a complete Google Search URL and receive a flat, page-ordered URL-and-text index.
 icon: icon.png
 created_at: '2026-08-19T08:30:00Z'
 privacy: PRIVACY.md
@@ -18,7 +18,7 @@ plugins:
   tools:
     - provider/reserp.yaml
 meta:
-  version: 0.1.0
+  version: 0.2.0
   arch:
     - amd64
     - arm64

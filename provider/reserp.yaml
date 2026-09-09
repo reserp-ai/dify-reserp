@@ -4,7 +4,7 @@ identity:
   label:
     en_US: Reserp
   description:
-    en_US: Submit a complete Google Search URL and receive a flat, page-ordered URL-and-text index.
+    en_US: Submit a complete Google Search URL and receive flat, page-ordered search results.
   icon: icon.png
   tags:
     - search

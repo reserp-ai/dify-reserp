@@ -10,7 +10,7 @@ from urllib.request import Request, urlopen
 from dify_plugin import Tool
 from dify_plugin.entities.tool import ToolInvokeMessage
 
-ENDPOINT = "https://api.reserp.ai/v2/serp/urls"
+ENDPOINT = "https://api.reserp.ai/v2/serp/search"
 
 
 def request_reserp(
@@ -19,7 +19,7 @@ def request_reserp(
     api_key: str,
     opener: Callable[[Request], Any] = urlopen,
 ) -> dict[str, Any]:
-    """Make one request and return the public Reserp v2 URL-index payload."""
+    """Make one request and return the public Reserp v2 Search payload."""
     request = Request(
         ENDPOINT,
         data=json.dumps({"url": url}).encode(),

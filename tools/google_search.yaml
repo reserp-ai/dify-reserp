@@ -5,8 +5,8 @@ identity:
     en_US: Google Search with Reserp
 description:
   human:
-    en_US: Send a complete Google Search URL to Reserp and receive its v2 URL index.
-  llm: Submit one complete https://www.google.com/search URL to Reserp. The tool returns a flat, page-ordered, deduplicated URL-and-text index without retries, result filtering, or automatic pagination.
+    en_US: Send a complete Google Search URL to Reserp and receive its v2 search results.
+  llm: Submit one complete https://www.google.com/search URL to Reserp. The tool returns flat, page-ordered, deduplicated results without retries, result filtering, or automatic pagination.
 parameters:
   - name: url
     type: string

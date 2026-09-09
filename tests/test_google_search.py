@@ -23,13 +23,8 @@ def test_one_request_and_unchanged_payload() -> None:
         "ok": True,
         "request": {"url": "https://www.google.com/search?q=test"},
         "page": {"url": "https://www.google.com/search?q=test"},
-        "urls": [{"url": "https://example.com", "text": "Example"}],
+        "results": [{"url": "https://example.com", "text": "Example"}],
         "pagination": {"next_url": "https://www.google.com/search?q=test&start=10"},
-        "metadata": {
-            "captured_at": "2026-09-07T00:00:00Z",
-            "parser_version": "2.0.0",
-            "warnings": [],
-        },
         "billed": True,
         "billing_source": "prepaid",
     }
@@ -47,7 +42,7 @@ def test_one_request_and_unchanged_payload() -> None:
 
     assert result == payload
     assert len(calls) == 1
-    assert calls[0].full_url == "https://api.reserp.ai/v2/serp/urls"
+    assert calls[0].full_url == "https://api.reserp.ai/v2/serp/search"
     assert calls[0].get_header("Authorization") == "Bearer test-key"
     assert json.loads(calls[0].data) == {
         "url": "https://www.google.com/search?q=test"
